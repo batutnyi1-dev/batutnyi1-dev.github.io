@@ -8,10 +8,24 @@
 </head>
 <body>
 <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Наверх">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
-    <polyline points="6 15 12 9 18 15"></polyline>
-  </svg>
+  <img src="images/arrow-up.png" alt="Наверх" class="arrow-icon" />
 </button>
+<script>
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    scrollTopBtn.classList.add("show");
+  } else {
+    scrollTopBtn.classList.remove("show");
+  }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+</script>
 <!-- Прелоадер -->
 <div id="preloader">
   <svg viewBox="0 0 240 240" height="240" width="240" class="loader">
@@ -26,7 +40,7 @@
 <header class="site-header">
   <div class="container header-container">
 
-    <a href="#" class="logo">
+    <a href="./index.html" class="logo">
       <img src="images/logo.png" alt="Батутный центр №1">
     </a>
 

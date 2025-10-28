@@ -1041,45 +1041,47 @@ button:hover .star-6 {
 /*-- ===== кнопка возврата ===== */
 /* === Кнопка "Вверх" === */
 .scroll-top-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 9999;
-    background: #00ffae;
-    color: #1a1d1c;
-    border: none;
-    outline: none;
-    font-size: 1.6rem;
-    font-weight: bold;
-
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBvbHlsaW5lIHBvaW50cz0iNiAxNSAxMiA5IDE4IDE1Ii8+PC9zdmc+");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 40%;
-
-    height: 38px;
-    width: 10px;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  background: #00ffae;
+  border: none;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* При наведении */
-.scroll-top-btn:hover {
-  background: #00d99b;
-  transform: scale(1.1);
-}
-
-/* Когда видна */
 .scroll-top-btn.show {
   opacity: 1;
   visibility: visible;
 }
+
+.scroll-top-btn:hover {
+  transform: scale(1.1);
+  background: #00d99b;
+}
+
+.arrow-icon {
+  width: 48px;
+  height: 48px;
+  filter: brightness(0) saturate(100%) invert(8%) sepia(91%) saturate(6021%) hue-rotate(123deg) brightness(103%) contrast(105%);
+  /* ↑ делает стрелку зелёной неоновой — можно убрать, если PNG уже окрашен */
+  transition: transform 0.2s ease;
+}
+
+.scroll-top-btn:hover .arrow-icon {
+  transform: translateY(-4px);
+}
+
 
 /* --- Исправление для iPhone / Safari --- */
 @supports (-webkit-touch-callout: none) {
@@ -1192,7 +1194,7 @@ button:hover .star-6 {
   text-align: center;
   position: relative;
   overflow: hidden;
-  height: 630px;
+  height: 530px;
 }
 
 /* Эффект мягкого свечения */
