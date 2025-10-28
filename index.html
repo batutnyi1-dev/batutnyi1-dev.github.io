@@ -308,26 +308,19 @@
   <h2 class="section-title">Документы для посещения</h2>
 
   <div class="documents">
-    <a href="docs/soglasie.pdf" class="doc-link" data-pdf="docs/soglasie.pdf">
-  <span class="icon">📄</span> Согласие посетителя
-</a>
-    <a href="docs/pravila.pdf" class="doc-link" data-pdf="docs/pravila.pdf">
-      <span class="icon">📄</span> Правила посещения
-    </a>
-    <a href="docs/oferta.pdf" class="doc-link" data-pdf="docs/oferta.pdf">
-      <span class="icon">📄</span> Публичная оферта
-    </a>
-  </div>
+  <a href="pdf/soglasie.pdf" download class="doc-link">
+    <span class="icon">📄</span> Согласие посетителя
+  </a>
+  <a href="pdf/pravila.pdf" download class="doc-link">
+    <span class="icon">📄</span> Правила посещения
+  </a>
+  <a href="pdf/oferta.pdf" download class="doc-link">
+    <span class="icon">📄</span> Публичная оферта
+  </a>
+</div>
 
   <!-- Модальное окно PDF -->
 
-<!-- Просмотр PDF-документов -->
-<div id="pdfViewerBack" class="modal-backdrop-pdf">
-  <div class="modal-window-pdf">
-    <button class="close-btn-pdf" aria-label="Закрыть окно">×</button>
-    <iframe id="pdfFrameBack" src="" frameborder="0"></iframe>
-  </div>
-</div>
 
 
 </section>
@@ -338,7 +331,7 @@
     <h2>Контакты</h2>
 
     <div class="contact-item">
-      <img src="./images/email.png" style="width: 36px; height: 36px; margin-bottom: 15px;">
+      <img src="./images/geo.png" style="width: 36px; height: 36px; margin-bottom: 15px;">
       <i class="icon location"></i>
       <div>
         <h3>Торговый центр "Обними", 2 этаж</h3>
@@ -347,7 +340,7 @@
     </div>
 
     <div class="contact-item">
-      <img src="images/geo.png" style="width: 36px; height: 36px;">
+      <img src="images/email.png" style="width: 36px; height: 36px;">
       <i class="icon email"></i>
       <p>E-mail: <a href="mailto:info@batutn1obninsk.ru">info@batutn1obninsk.ru</a></p>
     </div>
@@ -365,8 +358,10 @@
 
     <div class="socials">
       <p>Мы в соц сетях:</p>
-      <a href="#" class="vk"><img src="images/vk-logo.svg" alt="VK"></a>
-      <a href="#" class="insta"><img src="images/instagram.svg" alt="Instagram"></a>
+      <a href="https://vk.com/batutn1obninsk" target="_blank" rel="noopener noreferrer" class="vk"><img src="images/vk-logo.svg" alt="VK"></a>
+      <a href="https://www.instagram.com/batutn1obninsk/" target="_blank" rel="noopener noreferrer" class="insta"><img src="images/instagram.svg" alt="Instagram"></a>
+      <a href="https://t.me/batutn1obninsk" target="_blank" rel="noopener noreferrer" class="insta"><img src="images/telegram.svg" alt="Telegram"></a>
+      
     </div>
   </div>
 
@@ -467,6 +462,36 @@ pdfBackdrop.addEventListener("click", e => {
 });
 
 
+/*=====download info=====*/
+link.addEventListener('click', e => {
+  e.preventDefault();
+  const url = link.getAttribute('href');
+  alert('📄 Файл начнет скачиваться...');
+  const a = document.createElement('a');
+  a.href = url;
+  a.setAttribute('download', '');
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+});
+/*=====download info=====*/
+
+/*=====ios safari=====*/
+document.querySelectorAll('.doc-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const url = link.getAttribute('href');
+
+      // Создаём скрытую ссылку для скачивания
+      const a = document.createElement('a');
+      a.href = url;
+      a.setAttribute('download', '');
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    });
+  });
+/*==========*/
 </script>
 
 

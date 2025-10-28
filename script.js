@@ -62,22 +62,3 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-/* Анимации */
-docLinks.forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    const pdfPath = link.getAttribute("data-pdf");
-
-    // Проверяем устройство
-    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-    if (isIOS) {
-      // На iPhone открываем в новой вкладке
-      window.open(pdfPath, "_blank");
-    } else {
-      // На остальных — открываем в модалке
-      viewer.src = pdfPath;
-      modal.style.display = "flex";
-    }
-  });
-});

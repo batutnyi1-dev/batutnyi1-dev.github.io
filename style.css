@@ -1,6 +1,6 @@
 /* ===== ОБЩИЕ СТИЛИ ===== */
 body {
-font-family: "Gill Sans", sans-serif;
+font-family: 'MyFont', sans-serif;
   margin: 0;
   padding: 0;
   color: #222;
@@ -175,7 +175,6 @@ h1, h2, h3 {
 .socials img {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
 }
 
 .contacts-map {
@@ -718,135 +717,13 @@ button:hover .star-6 {
   86%, to { stroke-dasharray: 0 440; stroke-width: 20; stroke-dashoffset: -440; }
 }
 
-/*=========/*
-/* === PDF === */
-
-/* === Задний фон модалки (оверлей) === */
-.modal-backdrop-pdf {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  overscroll-behavior: contain; /* предотвращает прокрутку body */
+/*=========*/
+@font-face {
+  font-family: 'MyFont';
+  src: url('fonts/myfont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* При активной модалке — запрет прокрутки фона */
-body.modal-open {
-  overflow: hidden;
-  touch-action: none;
-}
-
-/* === Контейнер модального окна === */
-.modal-window-pdf {
-  background: #fff;
-  border-radius: 14px;
-  width: 90%;
-  max-width: 1100px;
-  height: 85vh;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  animation: scaleInPdf 0.25s ease;
-}
-
-/* === Сам PDF iframe === */
-#pdfFrameBack {
-  width: 100%;
-  height: 100%;
-  border: none;
-  flex: 1;
-}
-
-/* === Кнопка закрытия === */
-.close-btn-pdf {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  background: #ffb588;
-  border: none;
-
-  width: 36px;
-  height: 36px;
-  font-size: 22px;
-  line-height: 0;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  transition: all 0.25s ease;
-  z-index: 13000;
-}
-/* === Обёртка для крестика (всегда сверху) === */
-.modal-content-back__close-wrap {
-  position: fixed;
-  top: 25px;
-  right: 25px;
-  z-index: 15003;
-}
-
-
-/* Контейнер PDF */
-.pdf-wrapper-back {
-  background: #fff;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 900px;
-  height: 85%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-/* Прокрутка PDF внутри */
-.pdf-wrapper-back iframe {
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 0 0 10px 10px;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch; /* важно для iOS */
-}
-
-
-/* === Анимации === */
-@keyframes fadeInPdf {
-  from {
-    background: rgba(0, 0, 0, 0);
-  }
-  to {
-    background: rgba(0, 0, 0, 0);
-  }
-}
-
-@keyframes scaleInPdf {
-  from {
-    transform: scale(0.92);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* === Мобильная адаптация === */
-@media (max-width: 768px) {
-  .modal-window-pdf {
-    width: 95%;
-    height: 80vh;
-  }
-
-  .close-btn-pdf {
-    top: 12px;
-    right: 130px;
-    width: 32px;
-    height: 32px;
-    font-size: 20px;
-  }
-}
+/*=========*/
