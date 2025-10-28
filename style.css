@@ -1076,6 +1076,17 @@ button:hover .star-6 {
   visibility: visible;
 }
 
+/* --- Исправление для iPhone / Safari --- */
+@supports (-webkit-touch-callout: none) {
+  .scroll-top-btn {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.9rem !important;
+    line-height: 1 !important;
+    border-radius: 50% !important;
+  }
+}
+
 /* ==== СЕКЦИЯ "О НАС" ==== */
 .about-block {
   background-color: #232323;
