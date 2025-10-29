@@ -7,6 +7,15 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="images/favicon.png" sizes="512x512">
 <link rel="apple-touch-icon" href="images/favicon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#96ffa8">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+
+<!-- Для Apple устройств -->
+<link rel="apple-touch-icon" href="icons/icon-512.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Батут №1">
 </head>
 <body>
 <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Наверх">
@@ -848,6 +857,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("✅ Service Worker зарегистрирован"))
+      .catch((err) => console.log("❌ Ошибка регистрации SW:", err));
+  });
+}
+</script>
 
 </body>
 </html>
