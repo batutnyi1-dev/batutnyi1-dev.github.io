@@ -387,8 +387,8 @@ iframe {
   border: none;
   border-bottom: 2px solid #aaa;
   background: transparent;
-  color: #fff;
-  font-family: "Arial", sans-serif;
+  color: #cdcdcd;
+  font-family: 'font', sans-serif;
   font-size: 16px;
   transition: all 0.3s ease;
   outline: none;
@@ -1313,7 +1313,7 @@ button:hover .star-6 {
   }
 }
 
-/* === ЛОГОТИП === */
+
 .logo {
   display: flex;
   align-items: center;
@@ -1334,3 +1334,71 @@ button:hover .star-6 {
   filter: drop-shadow(0 0 12px rgba(150, 255, 168, 0.7));
 }
 
+/* === галерея === */
+
+
+.photo-gallery {
+  padding: 130px 20px;
+  background-color: #1A1D1C;
+  text-align: center;
+  font-family: 'font', sans-serif;
+}
+
+.gallery-title {
+  color: #00FFAE;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.gallery-item {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 255, 174, 0.4);
+}
+
+/* Лайтбокс */
+.lightbox {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 174, 0.4);
+}
+
+/* Для мобильных */
+@media (max-width: 600px) {
+  .gallery-item {
+    height: 160px;
+  }
+  .gallery-title {
+    font-size: 1.6rem;
+  }
+}
