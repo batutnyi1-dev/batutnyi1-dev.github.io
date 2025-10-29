@@ -434,6 +434,28 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   </div>
 </div>
+
+<script>
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+// Показ/скрытие кнопки при прокрутке
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    scrollTopBtn.classList.add('show');
+  } else {
+    scrollTopBtn.classList.remove('show');
+  }
+});
+
+// Плавная прокрутка вверх
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+</script>
   
   <!-- Документы -->
   <h2 class="section-title">Документы для посещения</h2>
@@ -629,24 +651,6 @@ phoneInput.addEventListener('blur', () => {
 </script>
 
 <script>
-  const scrollTopBtn = document.getElementById('scrollTopBtn');
-
-// Показ/скрытие кнопки при прокрутке
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    scrollTopBtn.classList.add('show');
-  } else {
-    scrollTopBtn.classList.remove('show');
-  }
-});
-
-// Плавная прокрутка вверх
-scrollTopBtn.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
 
 // Если навигация прокручивает вниз (через якоря)
 document.querySelectorAll('a[href^="#"]').forEach(link => {
