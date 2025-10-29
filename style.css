@@ -1402,3 +1402,26 @@ button:hover .star-6 {
     font-size: 1.6rem;
   }
 }
+/* описание */
+.note-text {
+  color: #8f8f8f;
+  font-weight: 100;
+  display: inline-block;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
+  max-width: 100%;
+  word-wrap: break-word;
+  white-space: normal; /* Разрешает перенос */
+}
+
+/* Адаптив для телефонов */
+@media (max-width: 600px) {
+  .note-text {
+    font-size: 0.85rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+}
