@@ -881,11 +881,33 @@ button:hover .star-6 {
 .cost-block__title {
   text-align: center;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 2rem;
   color: #00ff99;
   text-shadow: 0 0 8px rgba(0, 255, 153, 0.2);
   font-family: 'font';
+}
+
+
+
+.desc-price {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  max-width: 800px;
+  text-align: center;
+  color: #7b7b7b; /* твой фирменный светло-зелёный */
+  font-family: 'font', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .desc-price {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
 }
 
 /* Обёртка для аккордеонов */
@@ -1185,8 +1207,10 @@ button:hover .star-6 {
 
 /* ===== HERO СЕКЦИЯ ===== */
 .hero-block {
-  background: linear-gradient(135deg, #232323 60%, #96ffa8 160%);
-  color: #f2f2f2;
+  background-image: url("gallery/4.png");
+  background-size: cover;
+  background-position: center;
+  height: 530px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1194,9 +1218,7 @@ button:hover .star-6 {
   text-align: center;
   position: relative;
   overflow: hidden;
-  height: 530px;
 }
-
 /* Эффект мягкого свечения */
 .hero-block::before {
   content: "";
@@ -1210,9 +1232,10 @@ button:hover .star-6 {
 }
 
 .hero-block__container {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
 }
 
 /* === Заголовок === */
