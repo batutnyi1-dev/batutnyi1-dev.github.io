@@ -566,7 +566,7 @@ iframe {
 
 @font-face {
   font-family: 'font';
-  src: url('./fonts/font.woff') format('woff');
+  src: url("https://batutnyi1-dev.github.io/fonts/font.woff2") format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap; /* улучшает производительность */
@@ -858,7 +858,7 @@ button:hover .star-6 {
 /*=========*/
 @font-face {
   font-family: 'MyFont';
-  src: url('fonts/myfont.woff2') format('woff2');
+  src: url("https://batutnyi1-dev.github.io/fonts/myfont.woff2") format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -1185,29 +1185,6 @@ button:hover .star-6 {
     margin-bottom: 1.5rem;
   }
 
-/* ===== HERO СЕКЦИЯ ===== */
-.hero-block {
-  background-image: url("gallery/4.png");
-  background-size: cover;
-  background-position: center;
-  height: 530px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6rem 2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-/* Эффект мягкого свечения */
-
-.hero-block__container {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 1.5rem 2rem;
-  border-radius: 12px;
-  display: inline-block;
-}
-
   .about-block__text {
     font-size: 1rem;
   }
@@ -1228,7 +1205,28 @@ button:hover .star-6 {
 }
 
 
+/* ===== HERO СЕКЦИЯ ===== */
+.hero-block {
+  background-image: url("./gallery/4.png");
+  background-size: cover;
+  background-position: center;
+  height: 530px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+/* Эффект мягкого свечения */
 
+.hero-block__container {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+}
 
 /* === Заголовок === */
 .hero-block__title {
