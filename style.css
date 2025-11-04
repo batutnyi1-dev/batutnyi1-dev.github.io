@@ -1220,16 +1220,6 @@ button:hover .star-6 {
   overflow: hidden;
 }
 /* Эффект мягкого свечения */
-.hero-block::before {
-  content: "";
-  position: absolute;
-  top: -40%;
-  left: -30%;
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(circle at center, rgba(150,255,168,0.15), transparent 70%);
-  z-index: 0;
-}
 
 .hero-block__container {
   background: rgba(0, 0, 0, 0.4);
