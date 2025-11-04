@@ -769,14 +769,15 @@ phoneInput.addEventListener('blur', () => {
 </script>
 
 <script>
-
 // Если навигация прокручивает вниз (через якоря)
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', () => {
     setTimeout(() => scrollTopBtn.classList.add('show'), 300);
   });
 });
-  document.querySelectorAll('.train-plan__header').forEach(header => {
+
+// Аккордеоны в блоке тренировок
+document.querySelectorAll('.train-plan__header').forEach(header => {
   header.addEventListener('click', () => {
     const item = header.parentElement;
     const content = item.querySelector('.train-plan__content');
@@ -786,16 +787,17 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-  // Плавное открытие/закрытие правил
-  const toggle = document.getElementById("rules-toggle");
-  const content = document.getElementById("rules-content");
-  const icon = toggle.querySelector(".icon");
+// Первый аккордеон — Правила
+const toggle = document.getElementById("rules-toggle");
+const content = document.getElementById("rules-content");
+const icon = toggle.querySelector(".icon");
 
-  toggle.addEventListener("click", () => {
-    const isOpen = content.classList.toggle("open");
-    icon.style.transform = isOpen ? "rotate(45deg)" : "rotate(0deg)";
-  });
-  // Второй аккордеон (без конфликтов)
+toggle.addEventListener("click", () => {
+  const isOpen = content.classList.toggle("open");
+  icon.style.transform = isOpen ? "rotate(45deg)" : "rotate(0deg)";
+});
+
+// Второй аккордеон — FAQ
 const safetyToggle = document.getElementById("safety-toggle");
 const safetyContent = document.getElementById("safety-content");
 const safetyIcon = safetyToggle.querySelector(".icon");
@@ -805,46 +807,42 @@ safetyToggle.addEventListener("click", () => {
   safetyIcon.style.transform = isOpen ? "rotate(45deg)" : "rotate(0deg)";
 });
 
-
-/*=====rus number=====*/
-
-/*==========*/
-
-/*=====ios safari=====*/
-document.querySelectorAll('.doc-link').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const url = link.getAttribute('href');
-
-      // Создаём скрытую ссылку для скачивания
-      const a = document.createElement('a');
-      a.href = url;
-      a.setAttribute('download', '');
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    });
-  });
-/*==========*/
-document.querySelectorAll('.doc-link').forEach(link => {
+// ===== Скачивание файлов (универсально для всех устройств) =====
+document.querySelectorAll('.doc-link, .download-link').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const url = link.getAttribute('href');
+    if (!url) return;
 
-    alert('📄 Файл начнет скачиваться...');
+    const fileName = url.split('/').pop();
 
-    const a = document.createElement('a');
-    a.href = url;
-    a.setAttribute('download', '');
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
+    // Проверяем — не отказался ли пользователь ранее
+    const declined = localStorage.getItem(`declined_${fileName}`);
+    if (declined === 'true') {
+      alert(`❌ Вы ранее отменили загрузку файла "${fileName}". Чтобы скачать снова — обновите страницу.`);
+      return;
+    }
+
+    // Подтверждение
+    const confirmed = confirm(`📄 Файл "${fileName}" начнёт скачиваться. Продолжить?`);
+
+    if (confirmed) {
+      const a = document.createElement('a');
+      a.href = url;
+      a.setAttribute('download', fileName);
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    } else {
+      localStorage.setItem(`declined_${fileName}`, 'true');
+      alert(`🚫 Загрузка файла "${fileName}" отменена.`);
+    }
   });
 });
-document.addEventListener('DOMContentLoaded', () => {
-  // ==== АККОРДЕОН ====
-  const accordions = document.querySelectorAll('.cost-block__item');
 
+// ==== Аккордеон для блока стоимости ====
+document.addEventListener('DOMContentLoaded', () => {
+  const accordions = document.querySelectorAll('.cost-block__item');
   accordions.forEach(acc => {
     const header = acc.querySelector('.cost-block__header');
     const content = acc.querySelector('.cost-block__content');
@@ -857,46 +855,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
-
-  // ==== СКАЧИВАНИЕ ФАЙЛОВ ====
-const downloadLinks = document.querySelectorAll('.download-link');
-
-downloadLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const url = link.getAttribute('href');
-    if (!url) return;
-
-    const fileName = url.split('/').pop();
-
-    // Проверка — не отказался ли пользователь ранее
-    const declined = localStorage.getItem(`declined_${fileName}`);
-    if (declined === 'true') {
-      alert(`❌ Вы ранее отменили загрузку файла "${fileName}". Чтобы скачать его снова — обновите страницу.`);
-      return;
-    }
-
-    // Диалог подтверждения
-    const confirmed = confirm(`📄 Файл "${fileName}" начнёт скачиваться. Продолжить?`);
-
-    if (confirmed) {
-      // Если согласился — скачиваем
-      const a = document.createElement('a');
-      a.href = url;
-      a.setAttribute('download', fileName);
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    } else {
-      // Если отказался — запоминаем отказ
-      localStorage.setItem(`declined_${fileName}`, 'true');
-      alert(`🚫 Загрузка файла "${fileName}" отменена.`);
-    }
-  });
 });
-
-
-
 </script>
 
 
