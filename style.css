@@ -566,7 +566,7 @@ iframe {
 
 @font-face {
   font-family: 'font';
-  src: url("https://batutnyi1-dev.github.io/fonts/font.woff2") format('woff');
+  src: url("./fonts/font.woff") format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap; /* улучшает производительность */
