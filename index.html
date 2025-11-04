@@ -8,7 +8,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#000000">
   <title>Батутный №1</title>
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=3">
   <link rel="icon" type="image/png" href="images/favicon.png" sizes="512x512">
 <link rel="apple-touch-icon" href="images/favicon.png">
 <link rel="manifest" href="manifest.json">
@@ -836,24 +836,39 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==== СКАЧИВАНИЕ ФАЙЛОВ ====
-  const downloadLinks = document.querySelectorAll('.download-link');
+const downloadLinks = document.querySelectorAll('.download-link');
 
-  downloadLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const url = link.getAttribute('href');
-      if (!url) return;
+downloadLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const url = link.getAttribute('href');
+    if (!url) return;
 
-      const fileName = url.split('/').pop();
-      alert(`📄 Файл "${fileName}" начнёт скачиваться...`);
+    const fileName = url.split('/').pop();
 
+    // Проверка — не отказался ли пользователь ранее
+    const declined = localStorage.getItem(`declined_${fileName}`);
+    if (declined === 'true') {
+      alert(`❌ Вы ранее отменили загрузку файла "${fileName}". Чтобы скачать его снова — обновите страницу.`);
+      return;
+    }
+
+    // Диалог подтверждения
+    const confirmed = confirm(`📄 Файл "${fileName}" начнёт скачиваться. Продолжить?`);
+
+    if (confirmed) {
+      // Если согласился — скачиваем
       const a = document.createElement('a');
       a.href = url;
       a.setAttribute('download', fileName);
       document.body.appendChild(a);
       a.click();
       a.remove();
-    });
+    } else {
+      // Если отказался — запоминаем отказ
+      localStorage.setItem(`declined_${fileName}`, 'true');
+      alert(`🚫 Загрузка файла "${fileName}" отменена.`);
+    }
   });
 });
 
