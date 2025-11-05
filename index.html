@@ -856,12 +856,7 @@ document.querySelectorAll('.doc-link, .download-link').forEach(link => {
 
     const fileName = url.split('/').pop();
 
-    // Проверяем — не отказался ли пользователь ранее
-    const declined = localStorage.getItem(`declined_${fileName}`);
-    if (declined === 'true') {
-      alert(`❌ Вы ранее отменили загрузку файла "${fileName}". Чтобы скачать снова — обновите страницу.`);
-      return;
-    }
+
 
     // Подтверждение
     const confirmed = confirm(`📄 Файл "${fileName}" начнёт скачиваться. Продолжить?`);
