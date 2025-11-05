@@ -1319,6 +1319,7 @@ button:hover .star-6 {
   }
   .hero-block__subtitle {
     font-size: 1rem;
+    font-family: 'font';
   }
   .hero-block__btn {
     padding: 0.8rem 1.4rem;
