@@ -171,6 +171,7 @@ h1, h2, h3 {
 
   #callbackBtn {
     width: 90%;
+    font-family: 'font';
   }
 }
 
@@ -1324,6 +1325,7 @@ button:hover .star-6 {
   .hero-block__btn {
     padding: 0.8rem 1.4rem;
     font-size: 0.95rem;
+    font-family: 'font';
   }
 }
 
