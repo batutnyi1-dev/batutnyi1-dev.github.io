@@ -1,17 +1,28 @@
 /* ===== ОБЩИЕ СТИЛИ ===== */
 body {
-font-family: 'MyFont', sans-serif;
+font-family: "Unbounded", sans-serif;
   margin: 0;
   padding: 0;
   color: #222;
   background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden !important;
 }
 
 h1, h2, h3 {
     margin: 0 0 15px;
     text-align: center;
     color: white;
-    font-family: 'MyFont';
+    font-family: "Unbounded", sans-serif;
 }
 
 /*======header=======*/
@@ -20,7 +31,7 @@ h1, h2, h3 {
   overflow: hidden;
 }
 .site-header {
-  background: #111;
+  background: #ffeadb;
   padding: 0.7rem 1.5rem;
   position: relative;
   z-index: 1000;
@@ -35,7 +46,7 @@ h1, h2, h3 {
 }
 
 .logo img {
-  height: 60px;
+  height: 80px;
 }
 
 .main-nav {
@@ -44,16 +55,16 @@ h1, h2, h3 {
 }
 
 .main-nav a {
-  color: #96ffa8;
+  color: #c19567;
   font-weight: 600;
   text-decoration: none;
   position: relative;
   transition: color 0.3s;
-  font-family: 'font';
+  font-family: 'one';
 }
 
 .main-nav a:hover {
-  color: #fff;
+  color: #ff7029;
 }
 
 .main-nav a::after {
@@ -80,10 +91,12 @@ h1, h2, h3 {
   border: 2px solid #96ffa8;
   transition: all 0.25s ease;
   white-space: nowrap;
+  font-family: 'Unbounded';
+  font-weight: 600;
 }
 
 .hero-block__btn:hover {
-  background-color: #111;
+  background-color: #ffc08a;
   color: #96ffa8;
   box-shadow: 0 0 15px rgba(150, 255, 168, 0.6);
 }
@@ -104,7 +117,7 @@ h1, h2, h3 {
   display: block;
   width: 100%;
   height: 3px;
-  background-color: #96ffa8;
+  background-color: #ffbf14;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -133,7 +146,7 @@ h1, h2, h3 {
     width: 100%;
     flex-direction: column;
     align-items: center;
-    background-color: #111;
+    background-color: #ffddb8;
     gap: 1.2rem;
     padding: 1rem 0;
     opacity: 0;
@@ -171,7 +184,6 @@ h1, h2, h3 {
 
   #callbackBtn {
     width: 90%;
-    font-family: 'font';
   }
 }
 
@@ -180,6 +192,7 @@ h1, h2, h3 {
 .section {
   padding: 100px 20px;
   text-align: center;
+  margin: 0 auto;
 }
 
 .p.info {
@@ -218,7 +231,7 @@ h1, h2, h3 {
   justify-content: space-between;
   padding: 40px;
   gap: 20px;
-  background-color: #232323;
+  background-color: #ffeadb;
 }
 
 .contacts-info {
@@ -232,6 +245,7 @@ h1, h2, h3 {
   font-weight: 700;
   margin-bottom: 20px;
   font-family: 'font';
+  color: #555555;
 }
 
 .contact-item {
@@ -372,7 +386,7 @@ iframe {
 }
 
 .modal-content {
-  background: #232323;
+  background: #fbdfb4;
   border-radius: 10px;
   padding: 30px 20px;
   width: 90%;
@@ -388,7 +402,7 @@ iframe {
   border: none;
   border-bottom: 2px solid #aaa;
   background: transparent;
-  color: #cdcdcd;
+  color: #3b3b3b;
   font-family: 'font', sans-serif;
   font-size: 16px;
   transition: all 0.3s ease;
@@ -446,9 +460,8 @@ iframe {
     max-width: 100%;
     margin: 4rem auto;
     padding: 2rem;
-    font-family: 'MyFont', sans-serif;
-    color: #d4d4d4;
-    background-color: #232323;
+    color: #4b3b35;
+    background-color: #ffeadb;
     margin-top: -40px;
     margin-bottom: 10px;
 }
@@ -459,8 +472,8 @@ iframe {
   font-weight: 800;
   margin: 2rem 0 1.5rem;
   position: relative;
-  color: mediumseagreen;
-  font-family: 'font';
+  color: #007e7a;
+
 }
 
 .section-title::before,
@@ -484,7 +497,7 @@ iframe {
 
 /* Карточка правил */
 .rules-card {
-  background: #454545;
+  background: #ffe2cc;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -500,10 +513,11 @@ iframe {
   justify-content: space-between;
   align-items: center;
   transition: background 0.2s ease;
-  font-family: 'font';
+  font-family: 'Unbounded';
+  font-weight: 400;
 }
 .rules-header:hover {
-  background: #405745;
+  background: #FF9F55;
 }
 .rules-header-content {
   display: flex;
@@ -522,7 +536,7 @@ iframe {
   overflow: hidden;
   opacity: 0;
   padding: 0 2rem;
-  background: #232323;
+  background: #f1cfb3;
   border-top: 1px solid transparent;
   line-height: 1.6;
   transition: all 0.4s ease;
@@ -568,6 +582,30 @@ iframe {
 @font-face {
   font-family: 'font';
   src: url("./fonts/font.woff") format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; /* улучшает производительность */
+}
+
+@font-face {
+  font-family: 'one';
+  src: url("./fonts/AKONY.woff") format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; /* улучшает производительность */
+}
+
+@font-face {
+  font-family: '2';
+  src: url("./fonts/Gropled-Bold.woff") format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; /* улучшает производительность */
+}
+
+@font-face {
+  font-family: '1';
+  src: url("./fonts/Adventure_Indiana_Jones.woff") format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap; /* улучшает производительность */
@@ -873,7 +911,7 @@ button:hover .star-6 {
   padding: 2rem;
   font-family: "Inter", sans-serif;
   color: #f5f5f5;
-  background: #141414;
+  background: #ffeadb;
 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
@@ -884,9 +922,10 @@ button:hover .star-6 {
   font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 2rem;
-  color: #00ff99;
+  color: #007e7a;
   text-shadow: 0 0 8px rgba(0, 255, 153, 0.2);
-  font-family: 'font';
+  font-family: 'Unbounded';
+  font-weight: 600;
 }
 
 
@@ -934,13 +973,14 @@ button:hover .star-6 {
   padding: 1rem 1.2rem;
   cursor: pointer;
   font-size: 1.1rem;
-  background: #232323;
-  color: #96ffa8;
+  background: #ffe2cc;
+  color: #4b3b35;
   transition: background 0.3s ease;
-  font-family: 'font';
+  font-family: 'Unbounded';
+  font-weight: 600;
 }
 .cost-block__header:hover {
-  background: #2d2d2d;
+  background: #FF9F55;
 }
 
 /* Иконка */
@@ -956,11 +996,13 @@ button:hover .star-6 {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    background: #1a1a1a;
+    background: #f1cfb3;
     padding: 0 1.2rem;
     transition: all 0.4s ease;
     line-height: 1.6;
-    color: #90f9bb;
+    color: #4b3b35;
+
+    font-family: 'Unbounded';
     font-weight: 600;
 }
 .cost-block__content.open {
@@ -994,10 +1036,12 @@ button:hover .star-6 {
     max-width: 100%;
     margin: 3rem auto;
     padding: 2rem;
-    font-family: "Inter", sans-serif;
-    color: #90f9bb;
-    background: #1a1d1c;
+    font-family: "font", sans-serif;
+    color: #4b3b35;
+    background: #ffeadb;
     margin-top: -0px;
+    font-family: 'Unbounded';
+    font-weight: 600;
 }
 
 
@@ -1021,13 +1065,14 @@ button:hover .star-6 {
     padding: 1rem 1.5rem;
     font-weight: 700;
     font-size: 1.2rem;
-    background: #222624;
+    background: #ffe2cc;
     transition: background 0.3s ease;
-    font-family: 'font';
-    color: #96ffa8;
+    font-family: 'Unbounded';
+    font-weight: 600;
+    color: #4b3b35;
 }
 .train-plan__header:hover {
-  background: #2f3432;
+  background: #FF9F55;
 }
 .train-plan__icon {
   color: #00ffae;
@@ -1040,7 +1085,7 @@ button:hover .star-6 {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  background: #181b1a;
+  background: #f1cfb3;
   border-top: 1px solid #3d413f;
   padding: 0 1.5rem;
   transition: all 0.4s ease;
@@ -1054,7 +1099,7 @@ button:hover .star-6 {
 .train-plan__price {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #00ffae;
+  color: #4b3b35;
   margin: 0.5rem 0;
 }
 .train-plan__desc {
@@ -1119,8 +1164,8 @@ button:hover .star-6 {
 
 /* ==== СЕКЦИЯ "О НАС" ==== */
 .about-block {
-  background-color: #232323;
-  color: #f2f2f2;
+  background-color: #ffd89e;
+  color: #af6245;
   padding: 4rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -1136,15 +1181,16 @@ button:hover .star-6 {
 
 .about-block__title {
   font-size: 2.4rem;
-  color: #96ffa8;
+  color: #43C6AC;
   margin-bottom: 1rem;
-  letter-spacing: 1px;
-  font-family: 'font';
+
+  font-family: 'Unbounded';
+  font-weight: 600;
 }
 
 .about-block__subtitle {
   font-size: 1.4rem;
-  color: #e0e0e0;
+  color: #af6245;
   margin-bottom: 2rem;
   font-style: italic;
 }
@@ -1156,7 +1202,7 @@ button:hover .star-6 {
 }
 
 .about-block__text strong {
-  color: #96ffa8;
+  color: #ff8f00;
 }
 
 /* === АНИМАЦИЯ ПОЯВЛЕНИЯ === */
@@ -1244,6 +1290,7 @@ button:hover .star-6 {
   color: #e0e0e0;
   margin-bottom: 2.5rem;
   line-height: 1.5;
+  font-family: 'one';
 }
 .hero-block__subtitle span {
   display: block;
@@ -1272,7 +1319,8 @@ button:hover .star-6 {
   text-decoration: none;
   overflow: hidden;
   transition: color 0.3s ease, background-color 0.3s ease;
-  font-family: 'font';
+  font-family: 'Unbounded';
+  font-weight: 600;
 }
 
 /* Создаём подчёркивание только под текстом */
@@ -1321,12 +1369,116 @@ button:hover .star-6 {
   .hero-block__subtitle {
     font-size: 1rem;
     font-family: 'font';
+    text-align: center;
   }
   .hero-block__btn {
     padding: 0.8rem 1.4rem;
     font-size: 0.95rem;
-    font-family: 'font';
   }
+}
+
+/* === галерея зала === */
+/* ==== ГАЛЕРЕЯ ==== */
+
+.gallery-modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-modal.active .gallery-modal__overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.gallery-modal__content {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  height: 80vh;
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+  transition: opacity 0.3s;
+}
+.gallery-modal__close:hover {
+  opacity: 0.7;
+}
+
+.gallery-modal__track {
+  display: flex;
+  transition: transform 0.4s ease;
+  height: 100%;
+  width: 100%;
+}
+
+.gallery-modal__item {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-modal__item img,
+.gallery-modal__item video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.gallery-modal__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0);
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 50%;
+  transition: background 0.3s;
+  z-index: 10001;
+}
+.gallery-modal__arrow:hover {
+  background: rgba(255,255,255,0.4);
+}
+.gallery-modal__arrow--prev { left: 15px; }
+.gallery-modal__arrow--next { right: 15px; }
+
+.gallery-btn {
+  background-color: #008c5f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.gallery-btn:hover {
+  background-color: #00a673;
 }
 
 
@@ -1334,6 +1486,7 @@ button:hover .star-6 {
   display: flex;
   align-items: center;
   height: 100%;
+  margin-right: 10%;
 }
 
 .logo__img {
@@ -1355,13 +1508,13 @@ button:hover .star-6 {
 
 .photo-gallery {
   padding: 130px 20px;
-  background-color: #1A1D1C;
+  background-color: #ffeadb;
   text-align: center;
   font-family: 'font', sans-serif;
 }
 
 .gallery-title {
-  color: #00FFAE;
+  color: #007e7a;
   font-size: 2rem;
   margin-bottom: 40px;
   font-weight: 600;
