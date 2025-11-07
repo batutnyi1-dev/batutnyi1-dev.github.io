@@ -73,11 +73,20 @@ scrollTopBtn.addEventListener("click", () => {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #121212;
+  background: linear-gradient(120deg, #FFE3BE, #FFD4A3, #FFF0D8);
+animation: gradientMove 6s ease-in-out infinite alternate;
+
+
   position: fixed;
   inset: 0;
   z-index: 9999;
 ">
+<style>
+@keyframes gradientMove {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+</style>
   <svg viewBox="0 0 240 240" height="180" width="180" class="loader" style="margin-bottom: 60px;">
     <circle stroke-linecap="round" stroke-dashoffset="-330" stroke-dasharray="0 660" stroke-width="20" stroke="#00ff9c" fill="none" r="105" cy="120" cx="120" class="loader-ring loader-ring-a"></circle>
     <circle stroke-linecap="round" stroke-dashoffset="-110" stroke-dasharray="0 220" stroke-width="20" stroke="#00ff9c" fill="none" r="35" cy="120" cx="120" class="loader-ring loader-ring-b"></circle>
@@ -431,7 +440,8 @@ lightbox.addEventListener('click', () => {
     <p>Инструктор на День рождения — 1000 руб/час</p>
     <p>Фотозона, шарики, праздничный стол — до 25 человек</p>
 
-    <button class="gallery-btn">Посмотреть галерею</button>
+    
+    <button class="gallery-btn">Посмотреть галерею</button><br>
 
     <span class="note-text">*Подробная информация у наших сотрудников.</span>
   </div>
@@ -800,7 +810,7 @@ phoneInput.addEventListener('blur', () => {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Можешь добавить плавное исчезновение прелоадера */
+/* плавное исчезновение прелоадера */
 .preloader-hidden {
   opacity: 0;
   transition: opacity 1s ease;
