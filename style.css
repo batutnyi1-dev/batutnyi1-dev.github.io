@@ -31,7 +31,7 @@ h1, h2, h3 {
   overflow: hidden;
 }
 .site-header {
-  background: #ffeadb;
+  background: #FDEAB9;
   padding: 0.7rem 1.5rem;
   position: relative;
   z-index: 1000;
@@ -52,53 +52,49 @@ h1, h2, h3 {
 .main-nav {
   display: flex;
   gap: 1.8rem;
+  margin-right: 10%;
 }
 
 .main-nav a {
-  color: #c19567;
+  color: #d6932e;
   font-weight: 600;
   text-decoration: none;
   position: relative;
   transition: color 0.3s;
-  font-family: 'one';
+  font-family: 'Unbounded';
+  letter-spacing: 1px;
+  font-size: 15pt;
 }
 
 .main-nav a:hover {
   color: #ff7029;
 }
 
-.main-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: #96ffa8;
-  transition: width 0.3s ease;
-}
-
-.main-nav a:hover::after {
-  width: 100%;
-}
-
 .hero-block__btn {
-  background-color: #96ffa8;
-  color: #111;
+  background-color: rgb(185 255 203 / 0%);
+  color: #fff;
   padding: 0.8rem 1.4rem;
   border-radius: 12px;
   font-weight: 700;
-  border: 2px solid #96ffa8;
+  border: 5px solid #f9aa1e;
   transition: all 0.25s ease;
   white-space: nowrap;
   font-family: 'Unbounded';
   font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.hero-block__btn:hover {
-  background-color: #ffc08a;
-  color: #96ffa8;
-  box-shadow: 0 0 15px rgba(150, 255, 168, 0.6);
+.hero-block__btn_up {
+  background-color: #fcb230;
+  color: #fff;
+  padding: 0.8rem 1.4rem;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  font-family: 'Unbounded';
+  font-weight: 300;
+  letter-spacing: 1pt;
 }
 
 /* ==== БУРГЕР ==== */
@@ -231,20 +227,20 @@ h1, h2, h3 {
   justify-content: space-between;
   padding: 40px;
   gap: 20px;
-  background-color: #ffeadb;
+  background-color: #FDEAB9;
 }
 
 .contacts-info {
   flex: 1 1 400px;
   max-width: 500px;
-  font-family: 'font';
+  font-family: 'Unbounded';
 }
 
 .contacts h2 {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 20px;
-  font-family: 'font';
+  font-family: 'Unbounded';
   color: #555555;
 }
 
@@ -261,12 +257,12 @@ h1, h2, h3 {
 }
 
 .contact-item h3 {
-  color: #28a76c;
+  color: #f9b02f;
   margin: 0;
 }
 
 .contact-item a {
-  color: #28a76c;
+  color: #f9b02f;
   text-decoration: none;
 }
 
@@ -370,6 +366,7 @@ iframe {
   color: white;
   text-align: center;
   padding: 15px;
+  letter-spacing: 1px;
 }
 /* ===== МОДАЛЬНОЕ ОКНО ===== */
 .modal {
@@ -403,7 +400,7 @@ iframe {
   border-bottom: 2px solid #aaa;
   background: transparent;
   color: #3b3b3b;
-  font-family: 'font', sans-serif;
+  font-family: 'Unbounded', sans-serif;
   font-size: 16px;
   transition: all 0.3s ease;
   outline: none;
@@ -457,24 +454,20 @@ iframe {
 
 /* Базовая стилизация */
 .rules-section {
+    font-family: "Arial";
     max-width: 100%;
     margin: 4rem auto;
     padding: 2rem;
-    color: #4b3b35;
-    background-color: #ffeadb;
+    color: #fff;
+    background-color: #FDEAB9;
     margin-top: -40px;
     margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
 }
 /* Заголовки с линиями */
-.section-title {
-  text-align: center;
-  font-size: 1.6rem;
-  font-weight: 800;
-  margin: 2rem 0 1.5rem;
-  position: relative;
-  color: #007e7a;
 
-}
+
 
 .section-title::before,
 .section-title::after {
@@ -497,7 +490,7 @@ iframe {
 
 /* Карточка правил */
 .rules-card {
-  background: #ffe2cc;
+  background: #d28e26;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -515,9 +508,10 @@ iframe {
   transition: background 0.2s ease;
   font-family: 'Unbounded';
   font-weight: 400;
+  letter-spacing: 1px;
 }
 .rules-header:hover {
-  background: #FF9F55;
+  background: #f9b02f;
 }
 .rules-header-content {
   display: flex;
@@ -536,7 +530,7 @@ iframe {
   overflow: hidden;
   opacity: 0;
   padding: 0 2rem;
-  background: #f1cfb3;
+  background: #fdb951;
   border-top: 1px solid transparent;
   line-height: 1.6;
   transition: all 0.4s ease;
@@ -568,7 +562,7 @@ iframe {
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  color: #009f6d;
+  color: #25393d;
   font-weight: 600;
   transition: color 0.2s ease;
 }
@@ -580,7 +574,7 @@ iframe {
 }
 
 @font-face {
-  font-family: 'font';
+  font-family: 'Unbounded';
   src: url("./fonts/font.woff") format('woff');
   font-weight: 700;
   font-style: normal;
@@ -589,7 +583,7 @@ iframe {
 
 @font-face {
   font-family: 'one';
-  src: url("./fonts/AKONY.woff") format('woff');
+  src: url("./fonts/DaysOne-Regular.woff") format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap; /* улучшает производительность */
@@ -911,7 +905,7 @@ button:hover .star-6 {
   padding: 2rem;
   font-family: "Inter", sans-serif;
   color: #f5f5f5;
-  background: #ffeadb;
+  background: #FDEAB9;
 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
@@ -922,7 +916,7 @@ button:hover .star-6 {
   font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 2rem;
-  color: #007e7a;
+  color: #d28e26;
   text-shadow: 0 0 8px rgba(0, 255, 153, 0.2);
   font-family: 'Unbounded';
   font-weight: 600;
@@ -936,7 +930,7 @@ button:hover .star-6 {
   max-width: 800px;
   text-align: center;
   color: #7b7b7b; /* твой фирменный светло-зелёный */
-  font-family: 'font', sans-serif;
+  font-family: 'Unbounded', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -1036,12 +1030,12 @@ button:hover .star-6 {
     max-width: 100%;
     margin: 3rem auto;
     padding: 2rem;
-    font-family: "font", sans-serif;
+    font-family: "Inter", sans-serif;
     color: #4b3b35;
-    background: #ffeadb;
+    background: #FDEAB9;
     margin-top: -0px;
-    font-family: 'Unbounded';
-    font-weight: 600;
+
+    font-weight: 100;
 }
 
 
@@ -1164,13 +1158,13 @@ button:hover .star-6 {
 
 /* ==== СЕКЦИЯ "О НАС" ==== */
 .about-block {
-  background-color: #ffd89e;
+  background-color: #FDEAB9;
   color: #af6245;
   padding: 4rem 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 700px;
+  height: 500px;
 }
 
 .about-block__container {
@@ -1181,7 +1175,7 @@ button:hover .star-6 {
 
 .about-block__title {
   font-size: 2.4rem;
-  color: #43C6AC;
+  color: #d28e26;
   margin-bottom: 1rem;
 
   font-family: 'Unbounded';
@@ -1254,7 +1248,7 @@ button:hover .star-6 {
 
 /* ===== HERO СЕКЦИЯ ===== */
 .hero-block {
-  background-image: url("https://batutnyi1-dev.github.io/gallery/4.png");
+  background-image: url("./gallery/4.png");
   background-size: cover;
   background-position: center;
   height: 530px;
@@ -1265,12 +1259,13 @@ button:hover .star-6 {
   text-align: center;
   position: relative;
   overflow: hidden;
+  transition: background-image 1s ease-in-out; /* плавный переход */
 }
 /* Эффект мягкого свечения */
 
 .hero-block__container {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 1.5rem 2rem;
+  background: rgb(0 0 0 / 66%);
+  padding: 1.5rem 6rem;
   border-radius: 12px;
   display: inline-block;
 }
@@ -1278,10 +1273,9 @@ button:hover .star-6 {
 /* === Заголовок === */
 .hero-block__title {
   font-size: 3rem;
-  color: #96ffa8;
+  color: #fff;
   margin-bottom: 1rem;
   font-weight: 800;
-  text-shadow: 0 0 15px rgba(150, 255, 168, 0.4);
 }
 
 /* === Подзаголовок === */
@@ -1290,13 +1284,14 @@ button:hover .star-6 {
   color: #e0e0e0;
   margin-bottom: 2.5rem;
   line-height: 1.5;
-  font-family: 'one';
+  font-family: 'Unbounded';
 }
 .hero-block__subtitle span {
   display: block;
-  color: #96ffa8;
+  color: #fff;
   font-weight: 600;
   margin-top: 0.3rem;
+  font-size: 23pt;
 }
 
 /* === Кнопки === */
@@ -1311,42 +1306,19 @@ button:hover .star-6 {
   position: relative;
   display: inline-block;
   background: none;
-  color: #b9ffcb;
-  border: 2px solid #b9ffcb;
+  color: #fff;
+  border: 5px solid #f9b02f;
   padding: 12px 26px;
   border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   overflow: hidden;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  letter-spacing: 1px;
   font-family: 'Unbounded';
   font-weight: 600;
 }
 
-/* Создаём подчёркивание только под текстом */
-.hero-block__btn--alt::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 8px;
-  width: 0;
-  height: 2px;
-  background: #b9ffcb;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
 
-/* При наведении — подчёркивание “выезжает” */
-.hero-block__btn--alt:hover::after {
-  width: 70%;
-}
-
-/* Лёгкая подсветка кнопки */
-.hero-block__btn--alt:hover {
-  color: #ffffff;
-  background-color: rgba(185, 255, 203, 0.1);
-  box-shadow: 0 0 10px rgba(185, 255, 203, 0.4);
-}
 
 
 /* === Адаптив === */
@@ -1368,7 +1340,7 @@ button:hover .star-6 {
   }
   .hero-block__subtitle {
     font-size: 1rem;
-    font-family: 'font';
+    font-family: 'Unbounded';
     text-align: center;
   }
   .hero-block__btn {
@@ -1508,13 +1480,13 @@ button:hover .star-6 {
 
 .photo-gallery {
   padding: 130px 20px;
-  background-color: #ffeadb;
+  background-color: #FDEAB9;
   text-align: center;
-  font-family: 'font', sans-serif;
+  font-family: 'Unbounded', sans-serif;
 }
 
 .gallery-title {
-  color: #007e7a;
+  color: #d28e26;
   font-size: 2rem;
   margin-bottom: 40px;
   font-weight: 600;
@@ -1593,4 +1565,314 @@ button:hover .star-6 {
     margin: 0 auto;
     padding: 0 10px;
   }
+}
+/*===========================*/
+.price-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* Верхняя строка — на больших экранах 2 блока рядом */
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+/* Карточки */
+.card {
+    background: #e5d8b8;
+    padding: 25px 35px;
+    border-radius: 30px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card.wide {
+    width: 100%;
+    max-width: 900px;    
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.card h2 {
+    color: #8c0076;
+    margin-bottom: 18px;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+.card p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.highlight {
+    color: #d48e00;
+    font-weight: bold;
+}
+
+small {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* ---------------------------------------------------------
+   📱 АДАПТИВ
+   --------------------------------------------------------- */
+
+/* --- Планшеты --- */
+@media (max-width: 992px) {
+
+    .row {
+        gap: 30px;
+    }
+
+    .card {
+        width: 280px;
+        padding: 20px 25px;
+    }
+
+    .card.wide {
+        width: 90%;
+    }
+
+    .card h2 {
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 18px;
+    }
+}
+
+/* --- Смартфоны (портретный режим) --- */
+@media (max-width: 768px) {
+
+    /* Верхние блоки становятся В СТОЛБЕЦ */
+    .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        width: 90%;
+        padding: 25px 20px;
+        border-radius: 25px;
+    }
+
+    .card.wide {
+        width: 95%;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 17px;
+    }
+
+    small {
+        font-size: 12px;
+    }
+}
+
+/* --- Очень маленькие телефоны (iPhone SE и т.п.) --- */
+@media (max-width: 420px) {
+
+    .card {
+        padding: 18px 15px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+}
+
+
+/* Контейнер */
+.party-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Заголовки */
+.title {
+    color: #ffcc00;
+    font-size: 56px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+.section-title {
+    color: #d28e26;
+    font-size: 56px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Карточки */
+.card {
+    background: #d0c098;
+    padding: 25px 35px;
+    border-radius: 25px;
+    width: 350px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+    color: #8c0076;
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.card p {
+    font-size: 20px;
+    margin: 8px 0;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+}
+
+.yellow {
+    color: #fdd324;
+    font-weight: bold;
+    font-family: 'Unbounded';
+}
+
+.bold {
+    font-size: 22px;
+}
+
+/* Ряд: фото – карточка – фото */
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.img-block {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Список */
+.list {
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.list li {
+    margin-bottom: 12px;
+}
+
+/* Инструктор */
+.instructor {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.yellow-bg {
+    background: #d48e00;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-family: 'Unbounded';
+}
+
+/* ----------------------------------------------------
+   📱 АДАПТИВ — смартфоны
+   ---------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .img-block {
+        width: 180px;
+        height: 180px;
+    }
+
+    .card {
+        width: 280px;
+        padding: 20px 25px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .img-block {
+        width: 90%;
+        height: auto;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .title {
+        font-size: 26px;
+    }
+
+    .card h2 {
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+
+    .list {
+        font-size: 16px;
+    }
+
+    .instructor {
+        font-size: 16px;
+    }
+}
+.logo-small {
+    display: none; /* по умолчанию скрыт */
+}
+
+@media (max-width: 1160px) {
+    .logo-large {
+        display: none;  /* скрываем большое лого */
+    }
+    .logo-small {
+        display: block; /* показываем маленькое лого */
+    }
 }

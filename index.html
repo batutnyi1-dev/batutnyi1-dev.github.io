@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
 <meta name="description" content="Батутный центр №1 — прыжки, веселье и эмоции для всей семьи! Прыгай выше — живи ярче! 🌟">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +32,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=16">
   <link rel="icon" type="image/png" href="images/favicon.png" sizes="512x512">
 <link rel="apple-touch-icon" href="images/favicon.png">
 <link rel="manifest" href="manifest.json">
@@ -110,7 +109,8 @@ animation: gradientMove 6s ease-in-out infinite alternate;
   <div class="container header-container">
 
     <a  class="logo">
-      <img src="images/logo.png" alt="Батутный центр №1">
+      <img class="logo-large" src="images/logo.png" alt="Батутный центр №1">
+  <img class="logo-small" src="images/logo-small.png" alt="Батутный центр №1">
     </a>
 
     <!-- Бургер -->
@@ -128,7 +128,7 @@ animation: gradientMove 6s ease-in-out infinite alternate;
       <a href="#contacts">Контакты</a>
     </nav>
 
-    <button id="callbackBtn" class="hero-block__btn">
+    <button id="callbackBtn" class="hero-block__btn_up">
       Обратный звонок
     </button>
 
@@ -180,9 +180,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <section class="hero-block">
   <div class="hero-block__container">
-    <h1 class="hero-block__title" style="font-family: 'one'; font-width: 500;">Батутный центр №1</h1>
+    <h1 class="hero-block__title" style="font-family: 'Unbounded'; font-width: 500;">Батутный центр №1</h1>
     <p class="hero-block__subtitle">
-      Прыгай выше — живи ярче  
+      <span style="color: #f9b02f;">Прыгай выше — живи ярче</span>  
       <span>Здесь начинается твой полёт!</span>
     </p>
 
@@ -312,24 +312,58 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   </div>
 </section>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const heroBlock = document.querySelector('.hero-block');
+  
+  if (!heroBlock) return; // на случай, если блока нет
 
+  const images = [
+    './gallery/4.png',
+    './gallery/6.jpg',
+    './gallery/7.jpg',
+    './gallery/8.jpg'
+  ];
+
+  let current = 0;
+
+  function changeBackground() {
+    current = (current + 1) % images.length;
+    heroBlock.style.backgroundImage = `url('${images[current]}')`;
+  }
+
+  // Меняем каждые 3 секунды
+  setInterval(changeBackground, 5000);
+});
+</script>
     <!-- О НАС -->
 <section class="about-block" id="about">
   <div class="about-block__container">
     <h2 class="about-block__title">О нас</h2>
-    <h3 class="about-block__subtitle">Земля — это скучно. Время оторваться! </h3>
+    <h3 class="about-block__subtitle">Давайте познакомимся!</h3>
 
     <p class="about-block__text">
-      Батутный центр №1 — ваша официальная точка отрыва от реальности 
+      Мы — Батутный центр №1 в Обнинске, и с 1 июня 2019 года дарим людям полёт, драйв и смех!
+Уже более 5 лет наши батуты помогают почувствовать, что значит по-настоящему оторваться от земли.
     </p>
     <p class="about-block__text">
-      <strong>Арсенал полёта :</strong> 17 батутов, 3 прочных трюкача и поролоновая бездна для приземления мечты 
+      За это время:
+50 000+ прыжков в день
+тысячи счастливых гостей
+и ни одного скучного дня!
+Наш батутный центр — это не просто место для прыжков.
+Это пространство, где можно весело провести время, прокачать тело,
+снять стресс и зарядиться позитивом на целый день.
+«Я летал!» — так говорят все, кто однажды оказался у нас. 
     </p>
     <p class="about-block__text">
-      <strong>Зоны броска:</strong> забей сверху или исчезни в лабиринте — детский восторг без границ
-    </p>
-    <p class="about-block__text">
-      <strong>Чистый драйв:</strong> адреналин в чистом виде. Без примесей и компромиссов
+      Что вас ждёт
+Наша арена — это 17 батутов, и каждый со своим характером полёта
+Поролоновая яма — безопасные приземления и эпичные «плюх!»
+Бассейн с шариками — зона радости для малышей и отдыха для родителей
+Здесь каждый может летать — хоть на 15 минут, хоть на весь день.
+Земля — это скучно. Время оторваться!
+Присоединяйся к нам!
     </p>
   </div>
 </section>
@@ -380,130 +414,109 @@ lightbox.addEventListener('click', () => {
 </script>
     <!-- ПРАЙС-ЛИСТ -->
 <section class="cost-block" id="price">
-  <h2 class="cost-block__title">Прайс-лист</h2>
-<span class="desc-price">*Прайс буднего дня действует с понедельника по пятницу до 17:00. 
-<br>С пятницы с 17:00 - прайс выходного дня.</span>
-  <div class="cost-block__accordion">
+<div class="price-section">
+<h2 class="section-title"><strong>ПРАЙС-ЛИСТ</strong></h2>
+<p style="font-weight: 100; color: #8f8f8f; margin-top: -20px; letter-spacing: 1px; text-align: center;">Все документы можно заполнить на месте, либо скачать заранее.
 
-    <!-- Аккордеон 1 -->
-    <div class="cost-block__item">
-      <div class="cost-block__header">
-        <span class="cost-block__icon">➕</span>
-        <span>Батуты — Будни</span>
-      </div>
-      <div class="cost-block__content">
-        <p><strong>1 час — 500 руб</strong></p>
-        <p>30 мин — 350 руб</p>
-        <p>15 мин — 250 руб</p>
-        <p>«Безлимитище!» — 750 руб</p>
-        <small>*нет ограничений по времени в течение дня</small>
-        <span class="note-text">*Подробная информация у наших сотрудников.</span>
-      </div>
+Дети до 18 лет при самостоятельном посещении допускаются в батутную зону только при наличии письменного согласия от родителей.</p>
+ <div class="row">
+        <div class="card">
+            <h2 style="font-family: 'Unbounded';">БУДНИ</h2>
+            <p style="font-family: 'Unbounded';"><b>«БЕЗЛИМИТИЩЕ» – 750 Р</b><br>(весь день)</p>
+            <p style="font-family: 'Unbounded';">1 час – 500 Р</p>
+            <p style="font-family: 'Unbounded';">30 минут – 350 Р</p>
+            <p style="font-family: 'Unbounded';">15 минут – 250 Р</p>
+        </div>
+
+        <div class="card">
+            <h2 style="font-family: 'Unbounded';">ВЫХОДНЫЕ</h2>
+            <p style="font-family: 'Unbounded';"><b>«БЕЗЛИМИТИЩЕ» – 850 Р</b><br>(не более 3-х часов)</p>
+            <p style="font-family: 'Unbounded';">1 час – 600 Р</p>
+            <p style="font-family: 'Unbounded';">30 минут – 450 Р</p>
+            <p style="font-family: 'Unbounded';">15 минут – 300 Р</p>
+        </div>
     </div>
 
-    <!-- Аккордеон 2 -->
-    <div class="cost-block__item">
-      <div class="cost-block__header">
-        <span class="cost-block__icon">➕</span>
-        <span>Батуты — Выходные</span>
-      </div>
-      <div class="cost-block__content">
-        <p><strong>1 час — 600 руб</strong></p>
-        <p>30 мин — 450 руб</p>
-        <p>15 мин — 300 руб</p>
-        <p>«Безлимитище!» — 850 руб (не более 3 часов)</p>
-      <span class="note-text">*Подробная информация у наших сотрудников.</span>
-      </div>
-
+    <div class="card wide">
+        <h2 style="font-family: 'Unbounded';">ПЕРСОНАЛЬНЫЕ ТРЕНИРОВКИ</h2>
+        <p style="font-family: 'Unbounded';">1 человек – 1500 Р/час</p>
+        <p style="font-family: 'Unbounded';">2 человека – 2000 Р/час</p>
+        <p style="font-family: 'Unbounded';">3 человека – 3500 Р/час</p>
     </div>
 
-    <!-- Аккордеон 3 -->
-<div class="cost-block__item">
-  <div class="cost-block__header">
-    <span class="cost-block__icon">➕</span>
-    <span>Аренда зала</span>
-  </div>
-  <div class="cost-block__content">
-    <p style="margin-bottom: -30px;">
-      Будни <span style="color:#8f8f8f; font-weight:100; white-space:nowrap;">(пн-пт до 17:00)</span>
-    </p><br>
-    <p>4 000 руб/час <span style="color:#8f8f8f; font-weight:100; white-space:nowrap;">(до 10 человек)</span></p>
-    <p>5 000 руб/час <span style="color:#8f8f8f; font-weight:100; white-space:nowrap;">(до 25 человек)</span></p>
-    <p style="margin-bottom: -30px;">
-      Выходные <span style="color:#8f8f8f; font-weight:100; white-space:nowrap;">(пт с 17:00)</span>
-    </p><br>
-    <p>6 000 руб/час <span style="color:#8f8f8f; font-weight:100;">(Аренда зоны до 10 человек)</span></p>
-    <p>8 000 руб/час <span style="color:#8f8f8f; font-weight:100;">(10:00–12:00 / 19:00–22:00)</span></p>
-    <p>12 000 руб/час <span style="color:#8f8f8f; font-weight:100;">(12:00–19:00)</span></p>
-    <p>Инструктор на День рождения — 1000 руб/час</p>
-    <p>Фотозона, шарики, праздничный стол — до 25 человек</p>
+    <div class="card wide">
+        <h2 style="font-family: 'Unbounded';">АБОНЕМЕНТЫ</h2>
+        <p style="font-family: 'Unbounded';"><b>БЕЗЛИМИТ – 7000 Р/мес.</b><br>(безлимитное посещение центра весь месяц, включая выходные)</p>
+        <p style="font-family: 'Unbounded';"><b>АБОНЕМЕНТ НА 8 ЗАНЯТИЙ – 8000 Р/мес.</b><br>(8 персональных тренировок в месяц)</p>
+    </div>
 
-    
-    <button class="gallery-btn">Посмотреть галерею</button><br>
+    <div class="card wide">
+        <h2 style="font-family: 'Unbounded';">ВЫГОДНО ДЛЯ ВСЕХ!</h2>
+        <p style="font-family: 'Unbounded';"><span class="highlight" style="font-family: 'Unbounded';">В день рождения</span> имениннику бесплатный вход на весь день!</p>
+        <p style="font-family: 'Unbounded';"><span class="highlight" style="font-family: 'Unbounded';">Студентам</span> скидка 50 руб. по будням на весь прайс!</p>
+        <p style="font-family: 'Unbounded';"><span class="highlight" style="font-family: 'Unbounded';">Скидки для многодетных</span> по будням на весь прайс!</p>
+        <small>*Скидки и акции действуют только при предъявлении подтверждающего документа</small>
+    </div>
 
-    <span class="note-text">*Подробная информация у наших сотрудников.</span>
-  </div>
 </div>
 
-
-
-
-    <!-- Аккордеон 4 -->
-    <div class="cost-block__item">
-      <div class="cost-block__header">
-        <span class="cost-block__icon">➕</span>
-        <span>Персональная тренировка</span>
-      </div>
-      <div class="cost-block__content">
-        <p>1 чел — 1500 руб/час</p>
-        <p>2 чел — 2000 руб/час</p>
-        <p>3 чел — 3500 руб/час</p>
-        
-        <span class="note-text">*Подробная информация у наших сотрудников.</span>
-      </div>
-    </div>
-    <div class="cost-block__item">
-      <div class="cost-block__header">
-        <span class="cost-block__icon">➕</span>
-        <span>«Выгодно для всех!»</span>
-      </div>
-      <div class="cost-block__content">
-        <p>В День рождения имениннику вход бесплатно на весь день! <span class="note-text"> *При предъявлении подтверждающего документа.</span></p>
-        <p>Студентам скидка 50 рублей.<span class="note-text"> *При предъявлении действующего студенческого билета. </span></p>
-        <span class="note-text">*Подробная информация у наших сотрудников.</span>
-      </div>
-    </div>
-
-  </div>
 </section>
 
 <!-- СЕКЦИЯ: Абонементы и тренировки -->
 <section class="train-plan" id="abonements">
-  <h2 class="cost-block__title">Абонементы</h2>
+<div class="party-container">
 
-  <div class="train-plan__item">
-    <div class="train-plan__header">
-      <span class="train-plan__icon">➕</span>
-      <p>Безлимит</p>
-    </div>
-    <div class="train-plan__content">
-      <p class="train-plan__price">7 000 руб/мес</p>
-      <p class="train-plan__desc">Включая выходные</p>
-      <span class="note-text">*Подробная информация у наших сотрудников.</span>
-    </div>
-  </div>
+    <h1 class="title">ТВОЙ ПРАЗДНИК В БАТУТНОМ ЦЕНТРЕ!</h1>
 
-  <div class="train-plan__item">
-    <div class="train-plan__header">
-      <span class="train-plan__icon">➕</span>
-      <p>Персональный тренер</p>
+    <p class="subtitle">
+        МЫ ПРЕДЛАГАЕМ ДВА ВАРИАНТА БРОНИРОВАНИЯ!<br>
+        АРЕНДА ПОСАДОЧНОЙ ЗОНЫ. ВАС ДО 10 ГОСТЕЙ И В ЦЕНТРЕ, ПОМИМО ВАС,<br>
+        МОГУТ НАХОДИТЬСЯ ДРУГИЕ ГОСТИ.<br>
+        АРЕНДА ВСЕГО ЗАЛА. В ЭТОМ СЛУЧАЕ МЫ ЗАКРЫВАЕМСЯ ТОЛЬКО ПОД ВАС!<br>
+        В ЭТОМ СЛУЧАЕ ВМЕСТИМОСТЬ ДО 25 ЧЕЛОВЕК (МАКСИМАЛЬНАЯ ВМЕСТИМОСТЬ ЦЕНТРА)
+    </p>
+
+    <div class="row">
+        <img src="./img/photo4.jpg" class="img-block">
+        <div class="card">
+            <h2>БУДНИ</h2>
+            <p><span class="yellow">АРЕНДА ЗОНЫ</span><span style="color: #fff; font-family: 'Unbounded';"> – 4000 Р/ЧАС</span></p>
+            <p><span class="yellow">АРЕНДА ЗАЛА</span><span style="color: #fff; font-family: 'Unbounded';"> – 5000 Р/ЧАС</span></p>
+        </div>
+        <img src="./img/photo2.jpg" class="img-block">
     </div>
-    <div class="train-plan__content">
-      <p><span style="color: white;"></span><strong> Индивидуальная тренировка</strong><br>1 500 руб/час</p>
-      <p><span style="color: white;"></span><strong> Абонемент на 8 занятий</strong><br>8 000 руб/мес</p>
-      <span class="note-text">*Подробная информация у наших сотрудников.</span>
+
+    <div class="row">
+        <img src="./img/photo7.jpg" class="img-block">
+        <div class="card">
+            <h2>ВЫХОДНЫЕ</h2>
+            <p><span class="yellow">АРЕНДА ЗОНЫ</span><span style="color: #fff; font-family: 'Unbounded';"> – 6000 Р/ЧАС</span></p>
+            <p><span class="yellow bold">АРЕНДА ЗАЛА:</span></p>
+            <p><span style="color: #fff; font-family: 'Unbounded';">8000 Р/ЧАС (с 10:00 до 12:00 и с 19:00 до 22:00)</span></p>
+            <p><span style="color: #fff; font-family: 'Unbounded';">12000 Р/ЧАС (с 12:00 до 19:00)</span></p>
+        </div>
+        <img src="./img/photo1.jpg" class="img-block">
     </div>
-  </div>
+
+    <h2 class="section-title">ЧТО ВХОДИТ В АРЕНДУ:</h2>
+
+    <ul class="list">
+        <li>ВСЯ ПЛОЩАДЬ БАТУТНОЙ АРЕНЫ.</li>
+        <li>БАНКЕТНАЯ ЗОНА. СТОЛ МЫ НАКРЫВАЕМ ПО КОЛ-ВУ ГОСТЕЙ<br>
+            (ТАРЕЛКИ, СТАКАНЧИКИ, ВИЛКИ, САЛФЕТКИ)
+        </li>
+        <li>ФОТОЗОНА УКРАШЕННАЯ КОМПОЗИЦИЕЙ ИЗ ВОЗДУШНЫХ ШАРОВ + ИМЕННАЯ КОМПОЗИЦИЯ. <br>
+            (ПО ОКОНЧАНИЮ МЕРОПРИЯТИЯ ШАРЫ ВЫ МОЖЕТЕ ЗАБРАТЬ С СОБОЙ)
+        </li>
+    </ul>
+
+    <p class="instructor">
+        <span class="yellow-bg">ИНСТРУКТОР НА МЕРОПРИЯТИЕ – 1000 Р/ЧАС</span><br>
+        (АКТИВНЫЕ ИГРЫ С ДЕТЬМИ НА БАТУТАХ)
+    </p>
+
+</div>
+
 </section>
 
 <section class="rules-section">
@@ -532,7 +545,7 @@ lightbox.addEventListener('click', () => {
       </div>
     </div>
   </div>
-<p style="font-weight: 100; color: #8f8f8f; margin-top: -20px;">Все документы можно заполнить на месте, либо скачать заранее.
+<p style="font-weight: 100; color: #656363; margin-top: -20px; letter-spacing: 1px;">Все документы можно заполнить на месте, либо скачать заранее.
 
 Дети до 18 лет при самостоятельном посещении допускаются в батутную зону только при наличии письменного согласия от родителей.</p>
 <!-- 🔹 Второй аккордеон -->
