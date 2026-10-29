@@ -84,19 +84,6 @@ h1, h2, h3 {
   letter-spacing: 1px;
 }
 
-.hero-block__btn_up {
-  background-color: #fcb230;
-  color: #fff;
-  padding: 0.8rem 1.4rem;
-  border-radius: 12px;
-  font-weight: 700;
-  transition: all 0.25s ease;
-  white-space: nowrap;
-  font-family: 'Unbounded';
-  font-weight: 300;
-  letter-spacing: 1pt;
-}
-
 /* ==== БУРГЕР ==== */
 .burger-menu {
   display: none;
@@ -178,9 +165,6 @@ h1, h2, h3 {
     font-size: 0.95rem;
   }
 
-  #callbackBtn {
-    width: 90%;
-  }
 }
 
 
@@ -368,78 +352,6 @@ iframe {
   padding: 15px;
   letter-spacing: 1px;
 }
-/* ===== МОДАЛЬНОЕ ОКНО ===== */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: #fbdfb4;
-  border-radius: 10px;
-  padding: 30px 20px;
-  width: 90%;
-  max-width: 400px;
-  position: relative;
-  text-align: center;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 10px 5px;
-  margin: 10px 0;
-  border: none;
-  border-bottom: 2px solid #aaa;
-  background: #fbdfb4;
-  color: #3b3b3b;
-  font-family: 'Unbounded', sans-serif;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  outline: none;
-}
-
-/* Placeholder */
-.modal-content input::placeholder {
-  color: #3b3b3b;
-  opacity: 0.8;
-  transition: 0.3s ease;
-}
-
-/* При наведении — лёгкое подсвечивание */
-.modal-content input:hover {
-  border-bottom-color: #ffb88c;
-}
-
-/* При фокусе — анимация линии и смена цвета */
-.modal-content input:focus {
-  border-bottom-color: #ffa366;
-  box-shadow: 0 2px 0 0 #ffa366;
-}
-
-/* Анимация placeholder — при фокусе он немного поднимается */
-.modal-content input:focus::placeholder {
-  transform: translateY(-5px);
-  opacity: 0.6;
-}
-
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 26px;
-  cursor: pointer;
-  color: #777;
-}
-
 /* ===== АДАПТИВ ===== */
 @media (max-width: 768px) {
   .header-container {
